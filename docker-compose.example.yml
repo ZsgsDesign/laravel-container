@@ -1,0 +1,32 @@
+version: '3'
+services:
+
+  nginx:
+    image: zsgsdesign/laravel-nginx:latest
+    restart: always
+    tty: true
+    ports:
+      - "8080:80"
+      - "8043:443"
+    volumes:
+      - ./:/var/www
+    networks:
+      - app-network
+    depends_on:
+      - php-fpm
+
+  php-fpm:
+    image: zsgsdesign/laravel-php:latest
+    restart: always
+    tty: true
+    volumes:
+      - ./:/var/www
+    networks:
+      - app-network
+    environment:
+      APP_ENV: "production"
+      APP_DEBUG: "false"
+
+networks:
+  app-network:
+    driver: bridge
