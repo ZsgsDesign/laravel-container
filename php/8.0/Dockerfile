@@ -31,6 +31,7 @@ RUN apk add --no-cache --virtual .build-deps \
         yarn \
         libzip-dev \
         rsync \
+        libgomp \
     && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted \
         gnu-libiconv \
     && git clone https://github.com/Imagick/imagick /tmp/imagick; cd /tmp/imagick/; phpize && ./configure; make; make install; cd /tmp; rm -rf imagick \
