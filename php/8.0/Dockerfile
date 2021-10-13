@@ -62,9 +62,11 @@ RUN apk add --no-cache --virtual .build-deps \
     && rm installer \
     && apk del -f .build-deps
 
-
-
 # Fix for iconv: https://github.com/docker-library/php/issues/240
 ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so php
+
+ENV LANG="C.UTF-8"
+ENV LANGUAGE="C.UTF-8"
+ENV LC_ALL="C.UTF-8"
 
 WORKDIR /var/www
