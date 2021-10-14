@@ -19,6 +19,8 @@ RUN apk add --no-cache --virtual .build-deps \
         bash \
         curl \
         git \
+        vim \
+        tzdata \
         imagemagick \
         mysql-client \
         openssh-client \
