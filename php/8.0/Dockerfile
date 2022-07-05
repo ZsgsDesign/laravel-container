@@ -70,3 +70,6 @@ ENV LANGUAGE="C.UTF-8"
 ENV LC_ALL="C.UTF-8"
 
 WORKDIR /var/www
+
+RUN addgroup -g 1001 app-docker \
+    && adduser -u 1001 -G app-docker -h /home/app-docker -D app-docker
