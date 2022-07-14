@@ -14,6 +14,7 @@ RUN apk add --no-cache --virtual .build-deps \
         libmcrypt-dev \
         libjpeg-turbo-dev \
         zlib-dev \
+        libldap \
         openldap-dev \
     && apk add --no-cache \
         bash \
