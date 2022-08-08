@@ -52,7 +52,6 @@ RUN apk add --no-cache --virtual .build-deps \
         pdo_sqlite \
         pgsql \
         soap \
-        tokenizer \
         zip \
         xml \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
